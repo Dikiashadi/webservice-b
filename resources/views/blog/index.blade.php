@@ -8,7 +8,7 @@
              <div class="col-12">
                 <div class="card">
                    <div class="card-header bg-primary">
-                      <h3 class="card-title">Data Blog ILKOM B</h3>
+                      <h3 class="card-title">DATA BLOG</h3>
                    </div>
                    <div class="card-body">
                    <a class="btn btn-success mb-3" href="{{ url('add-blog')}}" role="button"><i class="fas fa-add"></i> Tambah Data</a>
@@ -33,7 +33,14 @@
                                <td>{{ $row->title }}</td>
                                <td>{{ $row->body }}</td>
                                <td>{{ $row->keyword }}</td>
-                               <td><a href="#"> DELETE |</a> <a href="#"> UPDATE </a></td>
+                               <td>
+                                 <a class="btn btn-success btn-sm" href="{{ url('edit-blog')}}/{{ $row->id }}/edit" role="button"><i class="fas fa-add"></i> Update </a>
+                                 <form action=" {{ route('delete.blog', $row->id) }}" method="post" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
+                                 </form>
+                               </td>
                             </tr>
                             @endforeach
                          </tbody>
