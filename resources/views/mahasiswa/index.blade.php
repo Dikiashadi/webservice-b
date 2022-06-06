@@ -19,6 +19,7 @@
                                <th>No</th>
                                <th>Nim</th>
                                <th>Nama</th>
+                               <th>Umur</th>
                                <th>Semester</th>
                                <th>Aksi</th>
                             </tr>
@@ -29,6 +30,7 @@
                                <td>{{ $loop->iteration }}</td>
                                <td>{{ $row->nim }}</td>
                                <td>{{ $row->nama_mahasiswa }}</td>
+                               <td>{{ $row->umur }}</td>
                                <td>{{ $row->semester }}</td>
                                <td>
                                   <a class="btn btn-success btn-sm" href="{{ url('edit-mahasiswa')}}/{{ $row->id }}/edit" role="button"><i class="fas fa-add"></i> Update </a>

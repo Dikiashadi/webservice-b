@@ -27,7 +27,7 @@ Route::view('master','template/master');
 // Route Untuk Mahasiswa
 Route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
 Route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
-Route::post('getMhs', [MahasiswaController::class, 'ambilMhs'])->name('blog.getMhs');
+Route::post('getDataM', [MahasiswaController::class, 'ambilData'])->name('mahasiswa.getDataM');
 Route::delete('delete-mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('delete.mahasiswa');
 Route::get('edit-mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name('edit.mahasiswa');
 Route::put('edit-mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('update.mahasiswa');

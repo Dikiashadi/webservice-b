@@ -11,7 +11,7 @@
                             <h3 class="card-title">Tambah Data mahasiswa</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('blog.getMhs') }}" method="post">
+                            <form action="{{ route('mahasiswa.getDataM') }}" method="post">
                                 @csrf
                                 <div class="form-grup">
             <label for="">NIM</label>
