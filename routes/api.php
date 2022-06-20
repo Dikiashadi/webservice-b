@@ -6,6 +6,7 @@ use App\Http\Controllers\API\CustomerController;
 Use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategorieController;
+use App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('v1/customer/{id}', [CustomerController::class, 'show']);
 Route::delete('v1/customer/{id}', [CustomerController::class, 'destroy']);
 //tambah
 Route::post('v1/customer', [CustomerController::class, 'store']);
+// edit
+Route::put('v1/customer', [CustomerController::class, 'post']);
 
 //product
 Route::get('product', [ProductController::class, 'index']);
@@ -52,3 +55,6 @@ Route::get('category/{id}', [CategorieController::class, 'show']);
 Route::delete('category/{id}', [CategorieController::class, 'destroy']);
 // //tambah
 Route::post('category', [CategorieController::class, 'store']);
+
+//relasi
+Route::get('v1/categoriR', [CategorieController::class, 'indexRelasi']);

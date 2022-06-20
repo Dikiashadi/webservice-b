@@ -47,4 +47,10 @@ class CategorieController extends Controller
             'status' => $validate->errors()->all()
         ]);
     }
+    // relasi
+    public function indexRelasi()
+    {
+        $category = Categorie::with('product')->get();
+        return response()->json(['pesan' => 'Data Berhasil ditemukan', 'data' => $category], 200);
+    }
 }

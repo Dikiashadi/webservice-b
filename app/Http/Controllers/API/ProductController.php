@@ -50,4 +50,11 @@ class ProductController extends Controller
             'status' => $validate->errors()->all()
         ]);
     }
+    // Relasi
+    public function indexRelasi()
+    {
+        $products = Product::with('category')->get();
+        return response()->json(['pesan' => 'Data Berhasil ditemukan', 'data' => $products], 200);
+    }
+   
 }
