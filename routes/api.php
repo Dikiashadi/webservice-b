@@ -6,6 +6,7 @@ use App\Http\Controllers\API\CustomerController;
 Use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategorieController;
+use App\Http\Controllers\API\AuthController;
 use App\Models\Customer;
 
 /*
@@ -58,3 +59,15 @@ Route::post('category', [CategorieController::class, 'store']);
 
 //relasi
 Route::get('v1/categoriR', [CategorieController::class, 'indexRelasi']);
+
+
+Route::group(['middleware' => 'api'], function ($router) {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('me', [AuthController::class, 'me']);
+
+Route::get('password', function(){
+    return bcrypt('dikiash48');
+    });
+});
